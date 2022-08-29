@@ -74,18 +74,17 @@ const dashboard = () => {
   const mutation = useMutation(["devinfo"], (data) => getFilteredData(data), {
     onSuccess(data) {
       client.setQueryData(["devinfo"], data);
-      
-    },
-    onSettled(){
       toast({
-        title: "Filtering data..",
-        status: "info",
+        title: " data filtered..",
+        status: "success",
         variant: "subtle",
         duration: 5000,
         isClosable: true,
         position: "top",
       });
+      
     }
+   
   });
 
   const handleFilter = (e) => {
